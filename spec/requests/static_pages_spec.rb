@@ -33,8 +33,8 @@ describe "StaticPages" do
  	  expect(page).to have_content("About Us")
  	end
  	it "should have the title 'About Us'" do
-  	  visit "/static_pages/about"
-  	  expect(page).to have_title("Ruby on Rails Tutorial Sample App | About Us")
-  	end
+  	visit "/static_pages/about"
+  	expect(page).to have_title("Ruby on Rails Tutorial Sample App | About Us")
+  end
  end
 end
