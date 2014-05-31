@@ -1,15 +1,10 @@
 require 'spec_helper'
 
 describe "ContactPages" do
+  subject { page }
   describe "contact page" do
-    it "should have content 'Contact Us'" do
-      visit "/static_pages/contact"
-      expect(page).to have_content('Contact Us')
-    end
-    it "shjoul have title 'Contact Us'" do
-      visit "/static_pages/contact"
-      expect(page).to have_title('Contact Us')
-    end
-
+    before { visit contact_path }
+    it { should  have_content('Contact Us') }
+    it { should have_title(full_title('')) }
   end
 end
