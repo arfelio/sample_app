@@ -4,7 +4,12 @@ class UsersController < ApplicationController
   before_action :admin_user,     only: :destroy
 
   def new
+    if signed_in?
+      flash[:notice] = "User already exist"
+      redirect_to root_path
+    else
     @user = User.new
+    end
   end
 
   def index
